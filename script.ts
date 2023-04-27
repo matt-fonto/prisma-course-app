@@ -5,8 +5,13 @@ const prisma = new PrismaClient();
 async function main() {
   // ... you will write your Prisma Client queries here
   //   const user = await prisma.user.create({ data: { name: "Gabi" } });
-  const user = await prisma.user.findMany();
-  console.log(user);
+  await prisma.user.create({
+    data: {
+      name: "Hamlet",
+      email: "hamlet@mail.com",
+      age: 3,
+    },
+  });
 }
 
 // 1. The main function is an async function that will be called at the end of the file.
